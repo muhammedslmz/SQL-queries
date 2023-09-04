@@ -1,6 +1,6 @@
 1 film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.
 
-select distinct(rating), count(*) from film 
+select rating , count(*) from film 
 group by rating 
 -----------------------------
 
@@ -9,4 +9,24 @@ group by rating
 select replacement_cost , count(*) from film f 
 group by replacement_cost 
 having count(*) >50
+
+-----------------------
+
+3 customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayılarını nelerdir? 
+ select store_id, count(*) from customer 
+ group by store_id 
+ 
+
+
+
+--------------------------
+
+4 city tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.
+
+select country_id , count(*) from city 
+group by country_id 
+order by count(*) desc 
+limit 1
+
+
 
